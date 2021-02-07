@@ -1,0 +1,42 @@
+﻿@model CarSales.Data.ViewModels.PurchaseListViewModel
+@using CarSales.Data.Models
+@using CarSales.Data.ViewModels
+
+@{
+    ViewBag.Title = "PurchaseList";
+    Layout = "~/Views/Shared/_Layout_Customer.cshtml";
+}
+
+<h2>PurchaseList</h2>
+
+<table class="table">
+    <tr>
+        <th>
+            Vehicle
+        </th>
+        <th>
+            Price
+        </th>
+        <th>
+            Date of Purchase
+        </th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model.Purchases)
+    {
+        <tr>
+            <td>
+                @item.VehicleName
+            </td>
+            <td>
+                @item.PaidPrice €
+            </td>
+            <td>
+                @Convert.ToString(string.Format("{0:dd/MM/yyyy}", item.DateOfPurchase))
+            </td>
+        </tr>
+    }
+
+</table>
+

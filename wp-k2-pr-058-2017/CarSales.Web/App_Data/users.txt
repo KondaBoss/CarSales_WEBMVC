@@ -1,0 +1,4 @@
+1|Bogdan|Kondic|KondaBoss|bogdan.konda@gmail.com|123456|True|1999-01-19|Administrator|False|False
+2|Kondic|Bogdan|BossKonda|kondaboss@gmail.com|123456|True|2002-02-23|Customer|False|False
+3|Cvele|Mladjenovic|Ccvele|cvijetin@gmail.com|123456|True|1998-04-12|Customer|False|False
+4|Veljko|Kondic|VeljkoKonda|veljkokondic10@gmail.com|123456|True|2002-03-23|Customer|False|False

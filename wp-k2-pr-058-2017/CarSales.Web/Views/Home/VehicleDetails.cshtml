@@ -1,0 +1,127 @@
+﻿@model CarSales.Data.ViewModels.VehicleDetailsViewModel
+@using CarSales.Data.Models
+@{
+    ViewBag.Title = "VehicleDetails";
+    if (Model.UserRole == UserRole.Administrator)
+    {
+        Layout = "~/Views/Shared/_Layout_Administrator.cshtml";
+    }
+    else if (Model.UserRole == UserRole.Customer)
+    {
+        Layout = "~/Views/Shared/_Layout_Customer.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}
+
+<h2>Vehicle Details</h2>
+
+<div>
+    <h4>Vehicle</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            Brand
+        </dt>
+
+        <dd>
+            @Model.Vehicle.Brand
+        </dd>
+
+        <dt>
+            Model
+        </dt>
+
+        <dd>
+            @Model.Vehicle.Model
+        </dd>
+
+        <dt>
+            Type of Fuel
+        </dt>
+
+        <dd>
+            @Model.Vehicle.TypeOfFuel
+        </dd>
+
+        <dt>
+            Vehicle Color
+        </dt>
+
+        <dd>
+            @Model.Vehicle.VehicleColor
+        </dd>
+
+        <dt>
+            Chassis Designation
+        </dt>
+
+        <dd>
+            @Model.Vehicle.ChassisDesignation
+        </dd>
+
+        <dt>
+            Number of doors
+        </dt>
+
+        <dd>
+            @Model.Vehicle.NumberOfDoors
+        </dd>
+
+        <dt>
+            Price
+        </dt>
+
+        <dd>
+            @Model.Vehicle.Price
+        </dd>
+
+        <dt>
+            Description
+        </dt>
+
+        <dd>
+            @Model.Vehicle.Description
+        </dd>
+
+    </dl>
+
+
+</div>
+@{
+    if (Model.UserRole == UserRole.Administrator)
+    {
+        if (Model.Vehicle.InStock)
+        {
+            <p>
+                <a href="/Home/EditVehicle/@Model.Vehicle.ID">Edit</a> |
+                <a href="/Home/Index">Back to List</a>
+            </p>
+
+
+            
+        }
+        else
+        {
+            <p>
+                <a href="/Home/Index">Back to List</a>
+            </p>
+        }
+    }
+    else if (Model.UserRole == UserRole.Customer)
+    {
+        <p>
+            <a href="/Home/Index">Back to List</a> |
+            <a href="/Home/CreatePurchase/@Model.Vehicle.ID">Back to List</a>
+        </p>
+    }
+    else
+    {
+        <p>
+            <a href="/Home/Index">Back to List</a>
+        </p>
+    }
+}
+<hr />

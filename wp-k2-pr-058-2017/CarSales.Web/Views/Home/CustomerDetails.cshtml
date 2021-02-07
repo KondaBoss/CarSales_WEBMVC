@@ -1,0 +1,74 @@
+﻿@model CarSales.Data.Models.User
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout_Administrator.cshtml";
+}
+
+<h2>Customer details</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+
+        <dt>
+            Username
+        </dt>
+
+        <dd>
+            @Model.UserName
+        </dd>
+
+        <dt>
+            Email
+        </dt>
+
+        <dd>
+            @Model.Email
+        </dd>
+
+        <dt>
+            First name
+        </dt>
+
+        <dd>
+            @Model.FirstName
+        </dd>
+
+        <dt>
+            Last name
+        </dt>
+
+        <dd>
+            @Model.LastName
+        </dd>
+
+        <dt>
+            Gender
+        </dt>
+
+        @{ if (Model.Gender)
+            {
+                <dd>Male</dd>
+            }
+            else
+            {
+                <dd>Female</dd>
+            }
+
+        }
+
+        <dt>
+            Birth Date
+        </dt>
+
+        <dd>
+            @Convert.ToString(string.Format("{0:dd/MM/yyyy}", Model.BirthDate))
+        </dd>
+
+
+    </dl>
+</div>
+<p>
+    <a href="/Home/CustomerList">Back to List</a>
+</p>

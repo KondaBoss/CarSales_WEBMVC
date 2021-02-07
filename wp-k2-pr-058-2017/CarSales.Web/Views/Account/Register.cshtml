@@ -1,0 +1,82 @@
+﻿@model CarSales.Web.Models.RegisterViewModel
+
+@{
+    ViewBag.Title = "Register";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Register</h2>
+
+<form action="/Account/Register" method="post">
+    <div class="form-horizontal">
+        <hr />
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Email">Email</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="Email" name="Email" type="email" value="" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="UserName">Username</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="UserName" name="UserName" type="text" value="" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Password">Password</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line password" id="Password" name="Password" type="password" value="" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="ConfirmPassword">Confirm password</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line password" id="ConfirmPassword" name="ConfirmPassword" type="password" value="" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="FirstName">First name</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="FirstName" name="FirstName" type="text" value="" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="LastName">Last name</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="LastName" name="LastName" type="text" value="" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Gender">Gender</label>
+
+            <div class="col-md-10">
+                Male
+                <input  id="Gender" name="Gender" type="radio" value="True" />
+                Female
+                <input id="Gender" name="Gender" type="radio" value="False" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="BirthDate">Birth date</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="BirthDate" name="BirthDate" type="date"/>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create account" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+<div>@ViewBag.Message</div>
+

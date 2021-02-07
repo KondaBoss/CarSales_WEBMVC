@@ -1,0 +1,6 @@
+1|Volkswagen|Golf 5|12345678901234567|White|4|Dobar pravo|Petrol|6200|True
+2|BMW|1|12345678901234567|Black|2|Dobar dobar|PetrolAndGas|6000|True
+3|Volkswagen|Golf 2|12345678901234567|White|4|Dobar dobar pravo|Petrol|1200|True
+4|Citroen|C3|12345678901234567|White|4|Dobar|Methane|1700|True
+5|Opel|Corsa|12345678901234567|White|4|120000km|Petrol|5000|True
+6|Pagani|Zonda|12345678901234567|AliceBlue|2|Car for gold diggers|Petrol|1400000|False

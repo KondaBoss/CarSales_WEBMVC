@@ -1,0 +1,37 @@
+﻿@model IEnumerable<CarSales.Data.Models.User>
+
+@{
+    ViewBag.Title = "CustomerList";
+    Layout = "~/Views/Shared/_Layout_Administrator.cshtml";
+}
+
+<h2>Customer List</h2>
+
+
+<table class="table">
+    <tr>
+        <th>
+            Username
+        </th>
+        <th>
+            Email
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @item.UserName
+        </td>
+        <td>
+            @item.Email
+        </td>
+        <td>
+            <a href="/Home/CustomerDetails/@item.ID">Details</a> |
+            <a href="/Home/DeleteCustomer/@item.ID">Delete</a>
+        </td>
+    </tr>
+}
+
+</table>

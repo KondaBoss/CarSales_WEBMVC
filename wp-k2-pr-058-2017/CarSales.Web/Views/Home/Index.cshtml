@@ -1,0 +1,141 @@
+﻿@model CarSales.Data.ViewModels.VehicleListViewModel
+
+@using CarSales.Data.Models
+
+@{
+    ViewBag.Title = "Index";
+    if (Model.UserRole == UserRole.Administrator)
+    {
+        Layout = "~/Views/Shared/_Layout_Administrator.cshtml";
+    }
+    else if (Model.UserRole == UserRole.Customer)
+    {
+        Layout = "~/Views/Shared/_Layout_Customer.cshtml";
+    }
+    else
+    {
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+}
+
+<h2>Vehicle List</h2>
+
+@{
+    if (Model.UserRole == UserRole.Administrator)
+    {
+        <p>
+            <h3><a href="/Home/CreateNewVehicle">Create New</a></h3>
+        </p>
+    }
+}
+
+
+<form action="/" method="post">
+    <p>
+        Brand: <input id="BrandFilterText" name="BrandFilterText" type="text" value="@Model.BrandFilterText" />
+        Model: <input id="ModelFilterText" name="ModelFilterText" type="text" value="@Model.ModelFilterText" />
+        Price from:
+        <input id="PriceFromFilterText" name="PriceFromFilterText" type="number" value="@Model.PriceFromFilterText" />
+        to
+        <input id="PriceToFilterText" name="PriceToFilterText" type="number" value="@Model.PriceToFilterText" />
+        <input type="submit" value="Search" />
+    </p>
+</form>
+<table class="table">
+    <tr>
+        <th>
+            <a href="/?sortOrder=@ViewBag.BrandSortParm&brandFilterText=@Model.BrandFilterText&modelFilterText=@Model.ModelFilterText&priceFromFilterText=@Model.PriceFromFilterText&priceToFilterText=@Model.PriceToFilterText">Brand</a>
+        </th>
+        <th>
+            <a href="/?sortOrder=@ViewBag.ModelSortParm&brandFilterText=@Model.BrandFilterText&modelFilterText=@Model.ModelFilterText&priceFromFilterText=@Model.PriceFromFilterText&priceToFilterText=@Model.PriceToFilterText"">Model</a>
+        </th>
+        <th>
+            <a href="/?sortOrder=@ViewBag.PriceSortParm&brandFilterText=@Model.BrandFilterText&modelFilterText=@Model.ModelFilterText&priceFromFilterText=@Model.PriceFromFilterText&priceToFilterText=@Model.PriceToFilterText"">Price</a>
+        </th>
+
+        @{
+            if (Model.UserRole == UserRole.Administrator)
+            {
+                <th>
+                    In Stock
+                </th>
+                <th>
+                    Owner
+                </th>
+            }
+        }
+
+
+        <th>
+
+        </th>
+        <th></th>
+    </tr>
+    @foreach (var item in Model.Vehicles)
+    {
+    <tr>
+        <td>
+            @item.Brand
+        </td>
+        <td>
+            @item.Model
+        </td>
+        <td>
+            @item.Price €
+        </td>
+        @{
+            if (Model.UserRole == UserRole.Administrator)
+            {
+                if (item.InStock)
+                {
+                    <td>
+                        Yes
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        No
+                    </td>
+                }
+                <td>
+                    @item.Owner
+                </td>
+            }
+        }
+
+        <td></td>
+
+        @{
+            if (Model.UserRole == UserRole.Administrator)
+            {
+                if (item.InStock)
+                {
+                    <td>
+                        <a href="/Home/VehicleDetails/@item.ID">Details</a> |
+                        <a href="/Home/EditVehicle/@item.ID">Edit</a> |
+                        <a href="/Home/DeleteVehicle/@item.ID">Delete</a>
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        <a href="/Home/VehicleDetails/@item.ID">Details</a>
+                    </td>
+                }
+
+
+            }
+            else
+            {
+                <td>
+                    <a href="/Home/VehicleDetails/@item.ID">Details</a>
+                </td>
+            }
+        }
+
+    </tr>
+    }
+</table>
+
+<hr />

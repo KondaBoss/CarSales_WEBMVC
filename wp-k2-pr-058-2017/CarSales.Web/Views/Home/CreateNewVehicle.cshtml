@@ -1,0 +1,230 @@
+﻿@model CarSales.Data.Models.Vehicle
+
+@{
+    ViewBag.Title = "CreateNewVehicle";
+    Layout = "~/Views/Shared/_Layout_Administrator.cshtml";
+}
+
+<h2>Create new vehicle</h2>
+
+<form action="/Home/CreateNewVehicle" method="post">
+    <div class="form-horizontal">
+        <hr />
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Brand">Brand</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="Brand" name="Brand" type="text" value="" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Model">Model</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="Model" name="Model" type="text" value="" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="ChassisDesignation">Chassis designation</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="ChassisDesignation" name="ChassisDesignation" type="text" value="" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="NumberOfDoors">Number of doors</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="NumberOfDoors" name="NumberOfDoors" type="number" value="" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Description">Description</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="Description" name="Description" type="text" value="" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="TypeOfFuel">Type of fuel</label>
+            <div class="col-md-10">
+                <select class="form-control" id="FuelType" name="FuelType">
+                    <option value="">Select Fuel Type</option>
+                    <option value="0">Petrol</option>
+                    <option value="1">Petrol+Gas</option>
+                    <option value="2">Diesel</option>
+                    <option value="3">Methane</option>
+                    <option value="4">Electric Drive</option>
+                    <option value="5">Hybrid Drive</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="VehicleColor">Vehicle color</label>
+            <div class="col-md-10">
+                <select class="form-control" id="ColorType" name="ColorType">
+                    <option value="">Select Vehicle Color</option>
+                    <option value="0">Alice Blue</option>
+                    <option value="1">Antique White</option>
+                    <option value="2">Aqua</option>
+                    <option value="3">Aquamarine</option>
+                    <option value="4">Azure</option>
+                    <option value="5">Beige</option>
+                    <option value="6">Bisque</option>
+                    <option value="7">Black</option>
+                    <option value="8">Blanched Almond</option>
+                    <option value="9">Blue</option>
+                    <option value="10">Blue Violet</option>
+                    <option value="11">Brown</option>
+                    <option value="12">Burly Wood</option>
+                    <option value="13">Cadet Blue</option>
+                    <option value="14">Chartreuse</option>
+                    <option value="15">Chocolate</option>
+                    <option value="16">Coral</option>
+                    <option value="17">Cornflower Blue</option>
+                    <option value="18">Cornsilk</option>
+                    <option value="19">Crimson</option>
+                    <option value="20">Cyan</option>
+                    <option value="21">Dark Blue</option>
+                    <option value="22">Dark Cyan</option>
+                    <option value="23">Dark Goldenrod</option>
+                    <option value="24">Dark Gray</option>
+                    <option value="25">Dark Green</option>
+                    <option value="26">Dark Khaki</option>
+                    <option value="27">Dark Magenta</option>
+                    <option value="28">Dark Olive Green</option>
+                    <option value="29">Dark Orange</option>
+                    <option value="30">Dark Orchid</option>
+                    <option value="31">Dark Red</option>
+                    <option value="32">Dark Salmon</option>
+                    <option value="33">Dark SeaGreen</option>
+                    <option value="34">Dark SlateBlue</option>
+                    <option value="35">Dark SlateGray</option>
+                    <option value="36">Dark Turquoise</option>
+                    <option value="37">Dark Violet</option>
+                    <option value="38">Deep Pink</option>
+                    <option value="39">Deep Sky Blue</option>
+                    <option value="40">Dim Gray</option>
+                    <option value="41">Dodger Blue</option>
+                    <option value="42">Firebrick</option>
+                    <option value="43">Floral White</option>
+                    <option value="44">Forest Green</option>
+                    <option value="45">Fuchsia</option>
+                    <option value="46">Gainsboro</option>
+                    <option value="47">Ghost White</option>
+                    <option value="48">Gold</option>
+                    <option value="49">Goldenrod</option>
+                    <option value="50">Gray</option>
+                    <option value="51">Green</option>
+                    <option value="52">Green Yellow</option>
+                    <option value="53">Honeydew</option>
+                    <option value="54">Hot Pink</option>
+                    <option value="55">Indian Red</option>
+                    <option value="56">Indigo</option>
+                    <option value="57">Ivory</option>
+                    <option value="58">Khaki</option>
+                    <option value="59">Lavender</option>
+                    <option value="60">Lavender Blush</option>
+                    <option value="61">Lawn Green</option>
+                    <option value="62">Lemon Chiffon</option>
+                    <option value="63">Light Blue</option>
+                    <option value="64">Light Coral</option>
+                    <option value="65">Light Cyan</option>
+                    <option value="66">Light GoldenrodYellow</option>
+                    <option value="67">Light Gray</option>
+                    <option value="68">Light Green</option>
+                    <option value="69">Light Pink</option>
+                    <option value="70">Light Salmon</option>
+                    <option value="71">Light SeaGreen</option>
+                    <option value="72">Light SkyBlue</option>
+                    <option value="73">Light SlateGray</option>
+                    <option value="74">Light SteelBlue</option>
+                    <option value="75">Light Yellow</option>
+                    <option value="76">Lime</option>
+                    <option value="77">Lime Green</option>
+                    <option value="78">Linen</option>
+                    <option value="79">Magenta</option>
+                    <option value="80">Maroon</option>
+                    <option value="81">Medium Aquamarine</option>
+                    <option value="82">Medium Blue</option>
+                    <option value="83">Medium Orchid</option>
+                    <option value="84">Medium Purple</option>
+                    <option value="85">Medium Sea Green</option>
+                    <option value="86">Medium Slate Blue</option>
+                    <option value="87">Medium Spring Green</option>
+                    <option value="88">Medium Turquoise</option>
+                    <option value="89">Medium Violet Red</option>
+                    <option value="90">Midnight Blue</option>
+                    <option value="91">Mint Cream</option>
+                    <option value="92">Misty Rose</option>
+                    <option value="93">Moccasin</option>
+                    <option value="94">Name</option>
+                    <option value="95">Navajo White</option>
+                    <option value="96">Navy</option>
+                    <option value="97">Old Lace</option>
+                    <option value="98">Olive</option>
+                    <option value="99">Olive Drab</option>
+                    <option value="100">Orange</option>
+                    <option value="101">Orange Red</option>
+                    <option value="102">Orchid</option>
+                    <option value="103">Pale Goldenrod</option>
+                    <option value="104">Pale Green</option>
+                    <option value="105">Pale Turquoise</option>
+                    <option value="106">Pale Violet Red</option>
+                    <option value="107">Papaya Whip</option>
+                    <option value="108">Peach Puff</option>
+                    <option value="109">Peru</option>
+                    <option value="110">Pink</option>
+                    <option value="111">Plum</option>
+                    <option value="112">Powder Blue</option>
+                    <option value="113">Purple</option>
+                    <option value="114">Red</option>
+                    <option value="115">RosyBrown</option>
+                    <option value="116">Royal Blue</option>
+                    <option value="117">Saddle Brown</option>
+                    <option value="118">Salmon</option>
+                    <option value="119">Sandy Brown</option>
+                    <option value="120">Sea Green</option>
+                    <option value="121">Sea Shell</option>
+                    <option value="122">Sienna</option>
+                    <option value="123">Silver</option>
+                    <option value="124">Sky Blue</option>
+                    <option value="125">Slate Blue</option>
+                    <option value="126">Slate Gray</option>
+                    <option value="127">Snow</option>
+                    <option value="128">Spring Green</option>
+                    <option value="129">Steel Blue</option>
+                    <option value="130">Tan</option>
+                    <option value="131">Teal</option>
+                    <option value="132">Thistle</option>
+                    <option value="133">Tomato</option>
+                    <option value="134">Transparent</option>
+                    <option value="135">Turquoise</option>
+                    <option value="136">Violet</option>
+                    <option value="137">Wheat</option>
+                    <option value="138">White</option>
+                    <option value="139">White Smoke</option>
+                    <option value="140">Yellow</option>
+                    <option value="141">Yellow Green</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label class="control-label col-md-2" for="Price">Price</label>
+            <div class="col-md-10">
+                <input class="form-control text-box single-line" id="Price" name="Price" type="text" value="" />
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Create" class="btn btn-default" />
+            </div>
+        </div>
+    </div>
+</form>
+<div>
+    <a href="/">Back to List</a>
+</div>
